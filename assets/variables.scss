@@ -5,4 +5,9 @@
 $body-font-family: 'IBM Plex Sans', 'sans-serif';
 $heading-font-family: 'Merriweather', 'serif';
 $font-size-root: 18px;
+$font-color-root: #fff;
 @import '~vuetify/src/styles/styles.sass';
+
+body{
+  color: grey ;
+}
