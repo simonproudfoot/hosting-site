@@ -2,14 +2,15 @@
     <v-app>
 
         <v-app-bar :clipped-left="clipped" hide-on-scroll app>
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-            <v-toolbar-title v-text="title" />
+
+              <v-toolbar-title v-text="title" />
             <v-spacer />
+               <v-btn class="primary--border" outlined="" rounded >Sign in</v-btn>
         </v-app-bar>
         <v-main>
-            <v-container>
+
                 <nuxt />
-            </v-container>
+
         </v-main>
 
         <v-footer absolute app>
