@@ -7,7 +7,7 @@
                         <v-img :style="$vuetify.breakpoint.xs ||  $vuetify.breakpoint.sm ? 'opacity: 0.5' : null" class="ml-16 roundd-circle" src="headerpic.jpg" aspect-ratio="1"> </v-img>
                     </v-col>
                     <v-col cols="10" md="6" class="headerNudge ml-n16" style="z-index: 1" :style="$vuetify.breakpoint.xs ||  $vuetify.breakpoint.sm ? 'marginTop:-200px' : null">
-                        <h3 class="ml-16">Got a new website?</h3>
+                        <h3 class="ml-16">Got a new website? {{todos}}</h3>
                         <h1 class="display-2 primary--text" style="text-transform: capitalize">Let us handle the boring stuff.</h1>
                         <p class="ml-16 mt-3">Managing your web hosting can be a hassle, Have a one of our engineers regularly update your software, check for security flaws, Alert you if your site goes down and offer 24/7 online support if you need any help or advice </p>
                         <v-btn x-large rounded elevation="0" class="mt-3 secondary">Sign up</v-btn>
@@ -55,11 +55,9 @@
                 <v-overlay absolute z-index="-1"></v-overlay>
             </v-parallax>
         </section>
-
         <section class="pt-16">
             <v-container>
                 <v-row align="center" justify="center">
-
                     <v-col cols="10" md="6" style="z-index: 1">
                         <h3>With you from the start</h3>
                         <h1 class="display-2 primary--text" style="text-transform: capitalize">We can make you a website</h1>
@@ -84,18 +82,14 @@
                         <p class="ml-16 mt-3">Server companies don't can't usually make amends to your website... But we're not your average server company. Wordpress makes it easy for users to amend their content. However, there may be elements of the site that need a profesional
                             to update.<br/><br/>
                             <h4 class="primary--text">From £50<br/><small>Per amend</small></h4>
-
-
                     </v-col>
-
                 </v-row>
             </v-container>
         </section>
-
-        <section class="py-16">
+        <section class="py-16" style="background: url('geometry_@2X.png') repeat; background-size: 400px">
             <v-row relative z-index="3" align="center" justify="center">
                 <v-col cols="12" class="text-center">
-                    <h2 class="display-1 mb-5">Questions???</h2>
+                    <h2 class="display-2 mb-5 primary--text">Questions???</h2>
                 </v-col>
                 <v-col class="text-" cols="10" md="7">
                     <v-expansion-panels accordion>
@@ -129,13 +123,14 @@
         </section>
     </main>
 </template>
-
 <script>
+import { mapMutations } from 'vuex'
 export default {
-    components: {
-
-    }
+    components: {},
+    computed: {
+        todos() {
+            return this.$store.state.counter
+        }
+    },
 }
 </script>
-
-
