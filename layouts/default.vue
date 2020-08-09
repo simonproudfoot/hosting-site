@@ -6,7 +6,7 @@
             <v-spacer />
             <nuxt-link class="mx-3" to="/webdesign">Web design</nuxt-link>
             <nuxt-link class="mx-3" to="/amends">Site amends</nuxt-link>
-            <v-btn class="primary--border" outlined="" rounded>Sign in</v-btn>
+            <v-btn class="primary--border" outlined="" rounded @click="sendTest">Sign in</v-btn>
         </v-app-bar>
         <v-main>
             <nuxt />
@@ -23,6 +23,27 @@ export default {
         return {
             clipped: false,
             title: 'Web Covered'
+        }
+    },
+    methods: {
+        sendTest() {
+            const fakeData = [{ fake: 'data' }];
+
+            const payload = {
+                topic: 'topic',
+                logs: fakeData,
+            };
+
+            const url = 'https://mediamaze.leadbyte.co.uk/api/submit.php?returnjson=yes&campid=MY-TAX-REFUND&'
+
+            this.$axios.$post(url, payload).then(function(response) {
+                    console.log(response);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+
+
         }
     }
 }
