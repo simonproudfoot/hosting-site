@@ -124,7 +124,6 @@
     </main>
 </template>
 <script>
-import { mapMutations } from 'vuex'
 export default {
     components: {},
     computed: {
