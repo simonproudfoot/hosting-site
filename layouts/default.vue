@@ -34,9 +34,13 @@ export default {
                 logs: fakeData,
             };
 
+            const headers= {
+              header: {crossorigin:true}
+            }
+
             const url = 'https://mediamaze.leadbyte.co.uk/api/submit.php?returnjson=yes&campid=MY-TAX-REFUND&'
 
-            this.$axios.$post(url, payload).then(function(response) {
+            this.$axios.$post(url,headers, payload).then(function(response) {
                     console.log(response);
                 })
                 .catch(function(error) {
